@@ -87,14 +87,14 @@ const Resume: React.FC = () => {
     {
       title: '智能钢琴谱',
       description: '智能钢琴谱，是一款基于人工智能技术的智能乐谱APP。它能根据你的演奏，自动帮您翻谱。',
-      image: '/smartscore.png',
+      image: '/assets/smartscore.png',
       icon: '🎵'
     },
     {
       title: '个人项目：衍射仿真应用',
       description: '',
       link: 'LightPlayground.swiftpm',
-      image: '/lightPlayground.png',
+      image: '/assets/lightPlayground.png',
       details: '将O(n²)的非近似公式优化化为O(n²log(n))的估算算法，通过利用二维快速傅里叶变换，使实时用户交互成为可能。',
       icon: '🔬'
     }
