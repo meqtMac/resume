@@ -1,4 +1,5 @@
 import React from 'react';
+import SmartScoreIcon from './SmartScoreIcon';
 import './Resume.css';
 
 interface ContactInfo {
@@ -12,22 +13,31 @@ interface Education {
   major: string;
   graduationDate: string;
   location: string;
-  gpa: string;
-  rank: string;
 }
 
-interface Skill {
-  category: string;
-  items: string[];
+interface WorkExperience {
+  company: string;
+  positions: {
+    title: string;
+    startDate: string;
+    endDate: string;
+  }[];
+  location: string;
 }
+
+
 
 interface Project {
   title: string;
-  description: string;
+  subtitle?: string;
+  description?: string;
   image?: string;
   link?: string;
+  linkText?: string;
   details?: string;
-  icon: string;
+  isApp?: boolean;
+  showIcon?: boolean;
+  experiences?: Experience[];
 }
 
 interface Experience {
@@ -37,6 +47,27 @@ interface Experience {
   location: string;
   responsibilities: string[];
 }
+
+
+
+const formatSkillText = (text: string) => {
+  // 简化处理：直接将整个技能项用mono字体显示
+  return <span className="tech-term">{text}</span>;
+};
+
+const formatSectionTitle = (title: string) => {
+  const firstChar = title.charAt(0).toUpperCase();
+  const nextTwoChars = title.slice(1, 3).toLowerCase();
+  const restChars = title.slice(3).toLowerCase();
+  
+  return (
+    <>
+      <span style={{ color: '#3E0097' }}>{firstChar}</span>
+      <span style={{ color: '#3E0097' }}>{nextTwoChars}</span>
+      <span style={{ color: '#000000' }}>{restChars}</span>
+    </>
+  );
+};
 
 const Resume: React.FC = () => {
   const contactInfo: ContactInfo = {
@@ -49,89 +80,134 @@ const Resume: React.FC = () => {
     degree: '本科',
     major: '电子信息工程',
     graduationDate: '2024年7月',
-    location: '湖北，武汉',
-    gpa: '3.86/4',
-    rank: '6/26'
+    location: '武汉'
   };
 
-  const skills: Skill[] = [
+  const workExperiences: WorkExperience[] = [
     {
-      category: 'DEVELOPING',
-      items: [
-        'Web: JS, React',
-        '客户端: ObjC, Swift, Kotlin',
-        '算法: Python, Matlab, C++',
-        '兴趣: Rust, wasm, wgpu'
+      company: '腾讯',
+      location: '深圳',
+      positions: [
+        {
+          title: '腾讯视频 iOS/KMM 客户端开发',
+          startDate: '2024-7',
+          endDate: ''
+        },
+        {
+          title: '在研AIGC项目前端开发',
+          startDate: '2025-9',
+          endDate: ''
+        }
       ]
     },
     {
-      category: 'LANGUAGE',
-      items: ['托福成绩: 101']
+      company: '字节跳动',
+      location: '北京',
+      positions: [
+        {
+          title: '懂车帝 iOS客户端开发实习生',
+          startDate: '2023-10',
+          endDate: '2023-12月'
+        }
+      ]
     }
   ];
 
-  const coursework = [
-    '数学', '高等数学', '线性代数', '概率论', '复变函数', '随机过程',
-    '数理方程与特殊函数', '数值分析', '通信', '信息论基础', '信号与系统',
-    '数字信号处理', '通信原理', '计算机', '数据结构', '计算机网络',
-    '计算机组成与原理', '操作系统', '多媒体方向选修课', '数字图像处理',
-    '数字影音处理', '多媒体技术与应用'
+  const skills = [
+    'Javascript & TypeScript',
+    'Vue3, React, tailwindcss',
+    'Objective C',
+    'Swift',
+    'Kotlin(KMM)',
+    'Compose',
+    'UIKit',
+    'SwiftUI',
+    'Rust',
+    'Python'
   ];
+
+  const languages = [
+    'TOEFL成绩 101分'
+  ];
+
+
 
   const projects: Project[] = [
-    {
-      title: '独立上线App: 智能钢琴谱',
-      description: '智能钢琴谱（链接可点击）（本科期间帮老师实现）',
-      icon: '🎵'
-    },
-    {
+   {
       title: '智能钢琴谱',
-      description: '智能钢琴谱，是一款基于人工智能技术的智能乐谱APP。它能根据你的演奏，自动帮您翻谱。',
+      link: 'https://apps.apple.com/cn/app/%E6%99%BA%E8%83%BD%E9%92%A2%E7%90%B4%E8%B0%B1/id6504392318?l=en-GB',
+      linkText: 'App Store上线',
+      details: '智能钢琴谱，是一款基于人工智能技术的智能乐谱APP。它能根据你的演奏，自动帮您翻谱。',
       image: '/assets/smartscore.png',
-      icon: '🎵'
-    },
-    {
-      title: '个人项目：衍射仿真应用',
-      description: '',
-      link: 'LightPlayground.swiftpm',
-      image: '/assets/lightPlayground.png',
-      details: '将O(n²)的非近似公式优化化为O(n²log(n))的估算算法，通过利用二维快速傅里叶变换，使实时用户交互成为可能。',
-      icon: '🔬'
+      experiences: [
+        {
+          title: '在研AIGC前端项目',
+          company: '腾讯视频',
+          date: '2025年9月 - 至今',
+          location: '深圳',
+          responsibilities: [
+            '首页多tab瀑布流开发；动态卡片渲染、瀑布流布局、数据缓存、SSR能力开发。',
+            '主导使用tailwindcss 移动端页面适配。'
+          ]
+        },
+        {
+          title: '腾讯视频三段一码（KMM Compose）',
+          company: '腾讯视频',
+          date: '2025年1月 - 2025年7月',
+          location: '深圳',
+          responsibilities: [
+            '优化弹幕开启时的音量调节能力；通过节流+排查系统AP调用提高帧率。',
+            'iOS，Android、鸿蒙键盘能力适配。',
+            'KMM iOS模拟器target 编译问题 fix & KMM生成objc头文件治理，优化编辑速度。'
+          ]
+        },
+        {
+          title: '腾讯视频播放器、投屏业务维护',
+          company: '腾讯视频',
+          date: '2024年7月 - 2024年12月',
+          location: '深圳',
+          responsibilities: [
+            'iOS护眼模式开发。',
+            'DLNA投屏 & 腾讯视频私有投屏 音量调控能力开发。',
+            '联合创维 DLNA投屏导流腾讯视频私有投屏能力开发。',
+            '清晰度优化、观看历史启播优化、横竖视频续保优化增收4w+每天。'
+          ]
+        },
+        {
+          title: '开发提效',
+          company: '腾讯视频',
+          date: '2024年7月 - 至今',
+          location: '深圳',
+          responsibilities: [
+            '推动播放器业务引入Swift混编，排查编译问题，runtime机制的异常；开发提效。',
+            '通过AI编码工具；使用Webview开发TAB（腾讯内部开关下发工具）App内部Debug视图工具。',
+            '开发protobuf message - ts interface & 自定义协议 map<string, string> 解析器 流水线；用于前端瀑布流动态下发方案。'
+          ]
+        },
+        {
+          title: '软件开发实习生 - iOS移动应用',
+          company: '字节跳动-懂车帝',
+          date: '2023年10月 - 2023年12月',
+          location: '北京',
+          responsibilities: [
+            'SwiftUI实时活动、灵动岛适配',
+            '学习动态化跨端方案Lynx。'
+          ]
+        }
+      ]
     }
   ];
 
-  const experiences: Experience[] = [
-    {
-      title: '客户端开发',
-      company: '腾讯视频',
-      date: '2024年7月',
-      location: '深圳',
-      responsibilities: [
-        '推动组内使用Swift混编，排查组内runtime机制的异常。',
-        '技术需求：远程音频控制（手机控制电视）。',
-        '护眼模式需求：距离检测，眨眼检测创新功能开发。',
-        '学习动态化跨端方案VectorLayout，进行相关开发。',
-        '学习KMM(Kotlin Multiplatform Mobile)三端一码方案。'
-      ]
-    },
-    {
-      title: '软件开发实习生 - iOS移动应用',
-      company: '字节跳动-懂车帝',
-      date: '2023年10月 - 2023年12月',
-      location: '北京',
-      responsibilities: [
-        'SwiftUI实时活动，灵动岛适配。',
-        '学习动态化跨端方案Lynx。',
-        '首页Feed流相关需求开发。'
-      ]
-    }
-  ];
+
 
   return (
     <div className="resume-container">
       {/* Header */}
       <header className="resume-header">
-        <h1>蒋艺</h1>
+        <h1 className="name">
+          <span className="first-name">蒋</span>
+          <span className="last-name">艺</span>
+        </h1>
         <div className="contact-info">
           <div className="contact-item">
             <span className="icon">📞</span>
@@ -146,137 +222,164 @@ const Resume: React.FC = () => {
 
       {/* Main Content */}
       <div className="resume-main">
-        {/* Sidebar */}
+        {/* Left Column */}
         <aside className="resume-sidebar">
-          {/* Education */}
+          {/* Experience */}
           <section className="section">
-            <h2>Education</h2>
+            <h2 className="section-title">{formatSectionTitle("Experience")}</h2>
             <div className="education-item">
-              <h3>{education.school}</h3>
-              <div className="education-details">
-                {education.degree} - {education.major}
-              </div>
-              <div className="education-details">
-                📅 {education.graduationDate}
-              </div>
-              <div className="education-details">
-                📍 {education.location}
-              </div>
-              <div className="gpa-info">
-                <span><strong>GPA:</strong> {education.gpa}</span>
-              </div>
-              <div className="gpa-info">
-                <span><strong>排名:</strong> {education.rank}</span>
-              </div>
-            </div>
-          </section>
-
-          {/* Links */}
-          <section className="section">
-            <h2>Links</h2>
-            <div className="links">
-              <a href="#" className="link-item">🔗 GitHub: meqtMac</a>
-              <a href="#" className="link-item">📝 Blog: meqtmac.github.io</a>
-            </div>
-          </section>
-
-          {/* Skills */}
-          <section className="section">
-            <h2>Skills</h2>
-            {skills.map((skill, index) => (
-              <div key={index} className="skills-category">
-                <h3>{skill.category}</h3>
-                <div className="skills-list">
-                  {skill.items.map((item, itemIndex) => (
-                    <div key={itemIndex}>• {item}</div>
-                  ))}
+              <div className="education-header">
+                <div className="education-info">
+                  <h3 className="school-name">{education.school}</h3>
+                  <div className="degree-info">
+                    {education.degree}{education.major}
+                  </div>
+                  <div className="graduation-date">📅 {education.graduationDate}毕业</div>
                 </div>
+                <div className="education-location">📍 {education.location}</div>
+              </div>
+            </div>
+            
+            {workExperiences.map((work, index) => (
+              <div key={index} className="work-experience-item">
+                <div className="work-header">
+                  <h3 className="company-name">{work.company}</h3>
+                  <div className="work-location">📍 {work.location}</div>
+                </div>
+                {work.positions.map((position, posIndex) => (
+                  <div key={posIndex} className="position-item">
+                    <div className="position-info">{position.title}</div>
+                    <div className="work-date">
+                      📅 {position.startDate}
+                      {position.endDate && ` - ${position.endDate}`}
+                    </div>
+                  </div>
+                ))}
               </div>
             ))}
           </section>
 
-          {/* Coursework */}
+          {/* Language */}
           <section className="section">
-            <h2>Coursework</h2>
-            <div className="coursework-list">
-              {coursework.map((course, index) => (
-                <div key={index} className="coursework-item">{course}</div>
+            <h2 className="section-title">{formatSectionTitle("Language")}</h2>
+            <ul className="language-list">
+              {languages.map((language, index) => (
+                <li key={index} className="language-item">{language}</li>
               ))}
+            </ul>
+          </section>
+
+          {/* Skills */}
+          <section className="section">
+            <h2 className="section-title">{formatSectionTitle("Skills")}</h2>
+            <ul className="skills-list">
+              {skills.map((skill, index) => (
+                <li key={index} className="skill-item">{formatSkillText(skill)}</li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Links */}
+          <section className="section">
+            <h2 className="section-title">{formatSectionTitle("Links")}</h2>
+            <div className="links">
+              <div className="link-item">
+                <span className="link-icon">🔗</span>
+                <span className="link-label">GitHub</span>
+                <a href="#" className="link-value">meqtMac</a>
+              </div>
+              <div className="link-item">
+                <span className="link-icon">🔗</span>
+                <span className="link-label">Blog</span>
+                <a href="#" className="link-value">meqtmac.github.io</a>
+              </div>
             </div>
           </section>
+
+
         </aside>
 
-        {/* Content */}
+        {/* Right Column */}
         <main className="resume-content">
           {/* Summary */}
           <section className="section">
-            <h2>Summary</h2>
-            <p>
-              移动客户端开发，前端开发，图形 API（Metal，WebGPU）所有涉猎，希望
-              从事相关的前端，客户端相关开发及图形学研究，直觉相关研究。
+            <h2 className="section-title">{formatSectionTitle("Summary")}</h2>
+            <p className="summary-text">
+              移动客户端开发，前端开发；熟练掌握AI编码工具使用（codebuddy-腾讯自研AI IDE-类比cursor）。
             </p>
           </section>
 
           {/* Projects */}
           <section className="section">
-            <h2>Projects</h2>
+            <h2 className="section-title">{formatSectionTitle("Projects")}</h2>
             {projects.map((project, index) => (
               <div key={index} className="project">
-                <h3 className="project-title">
-                  <div className="project-icon">{project.icon}</div>
-                  {project.title}
-                </h3>
+                <div className="project-header">
+                  {project.isApp && <span className="app-badge">独立上线App</span>}
+                  {project.title && !project.isApp && <span className="project-type">{project.title}</span>}
+                  {project.subtitle && <span className="project-title">{project.subtitle}</span>}
+                </div>
+                
                 {project.description && (
                   <div className="project-description">
                     {project.description}
                   </div>
                 )}
+                
                 {project.link && (
                   <div className="project-link">
-                    <a href="#">🔗 {project.link}</a>
+                    <span className="link-icon">🔗</span>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      {project.linkText}
+                    </a>
                   </div>
                 )}
-                {project.image && (
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="project-image"
-                  />
+                
+                {project.showIcon && (
+                  <div className="project-app-icon">
+                    <SmartScoreIcon size={60} />
+                  </div>
                 )}
+                
+                {project.image && (
+                  <div className="project-image-container">
+                    <img 
+                      src={project.image} 
+                      alt={project.title || project.subtitle}
+                      className="project-image"
+                    />
+                  </div>
+                )}
+                
                 {project.details && (
                   <div className="project-details">
                     <p>{project.details}</p>
+                  </div>
+                )}
+                
+                {project.experiences && project.experiences.length > 0 && (
+                  <div className="project-experiences">
+                    {project.experiences.map((exp, expIndex) => (
+                      <div key={expIndex} className="experience-item">
+                        <div className="experience-header">
+                          <div className="experience-title-section">
+                            <h3 className="experience-title">{exp.title}</h3>
+                            <div className="experience-company">{exp.company}</div>
+                          </div>
+                        </div>
+                        <ul className="experience-responsibilities">
+                          {exp.responsibilities.map((resp, respIndex) => (
+                            <li key={respIndex}>{resp}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>
             ))}
           </section>
 
-          {/* Experience */}
-          <section className="section">
-            <h2>Experience</h2>
-            {experiences.map((exp, index) => (
-              <div key={index} className="experience-item">
-                <div className="experience-header">
-                  <div className="experience-info">
-                    <div className="experience-title">{exp.title}</div>
-                    <div className="experience-company">{exp.company}</div>
-                  </div>
-                  <div className="experience-meta">
-                    <div className="experience-date">📅 {exp.date}</div>
-                    <div className="experience-location">📍 {exp.location}</div>
-                  </div>
-                </div>
-                <div className="experience-description">
-                  <ul>
-                    {exp.responsibilities.map((resp, respIndex) => (
-                      <li key={respIndex}>{resp}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </section>
         </main>
       </div>
     </div>
