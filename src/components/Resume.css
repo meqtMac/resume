@@ -5,6 +5,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap');
 
+/* Language Switcher Styles */
+.language-switcher {
+  position: absolute;
+  top: 8mm;
+  right: 10mm;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.lang-btn {
+  padding: 6px 12px;
+  border: 1px solid var(--vivid-purple);
+  background: white;
+  color: var(--vivid-purple);
+  font-size: 8pt;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.lang-btn:hover {
+  background: var(--vivid-purple);
+  color: white;
+}
+
+.lang-btn.active {
+  background: var(--vivid-purple);
+  color: white;
+  font-weight: 600;
+}
+
+@media print {
+  .language-switcher {
+    display: none;
+  }
+}
+
 /* Color Definitions - Based on LaTeX MagicalCV */
 :root {
   --vivid-purple: #3E0097;
