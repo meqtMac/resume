@@ -25,10 +25,10 @@
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 9pt;
-  line-height: 1.4;
+  font-size: 8.5pt;
+  line-height: 1.3;
   color: var(--body-color);
-  padding: 0;
+  padding: 12mm 10mm;
   box-sizing: border-box;
   position: relative;
 }
@@ -36,8 +36,9 @@
 /* Header Styles */
 .resume-header {
   text-align: center;
-  padding: 8mm 15mm 6mm 15mm;
+  padding: 0 0 4mm 0;
   border-bottom: none;
+  margin-bottom: 3mm;
 }
 
 .name {
@@ -85,25 +86,25 @@
 /* Main Layout */
 .resume-main {
   display: grid;
-  grid-template-columns: 70mm 1fr;
-  gap: 0;
+  grid-template-columns: 65mm 1fr;
+  gap: 6mm;
   min-height: calc(297mm - 25mm);
 }
 
 /* Sidebar Styles */
 .resume-sidebar {
-  padding: 0 0 15mm 15mm;
+  padding: 0;
   background: white;
 }
 
 .resume-content {
-  padding: 0 15mm 15mm 8mm;
+  padding: 0;
   background: white;
 }
 
 /* Section Styles */
 .section {
-  margin-bottom: 8mm;
+  margin-bottom: 5mm;
 }
 
 .section-title {
@@ -506,31 +507,217 @@
 @media print {
   @page {
     size: A4;
-    margin: 0;
+    margin: 12mm 10mm 12mm 10mm;
+  }
+  
+  * {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  body {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
   
   .resume-container {
-    width: 210mm;
-    min-height: 297mm;
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
+    width: 100% !important;
+    min-height: auto !important;
+    max-width: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    font-size: 8.5pt !important;
+    line-height: 1.3 !important;
   }
   
+  /* Header optimization */
+  .resume-header {
+    padding: 0 0 4mm 0 !important;
+    margin-bottom: 3mm !important;
+  }
+  
+  .name {
+    font-size: 32pt !important;
+    margin-bottom: 3pt !important;
+    letter-spacing: 6px !important;
+  }
+  
+  .contact-info {
+    font-size: 9pt !important;
+    margin-top: 3pt !important;
+  }
+  
+  /* Main layout optimization */
+  .resume-main {
+    grid-template-columns: 65mm 1fr !important;
+    gap: 6mm !important;
+  }
+  
+  .resume-sidebar {
+    padding: 0 !important;
+  }
+  
+  .resume-content {
+    padding: 0 !important;
+  }
+  
+  /* Section spacing optimization */
   .section {
-    break-inside: avoid;
-  }
-  
-  .project,
-  .experience-item {
+    margin-bottom: 5mm !important;
     break-inside: avoid;
     page-break-inside: avoid;
   }
   
-  /* Ensure colors print correctly */
-  * {
-    -webkit-print-color-adjust: exact;
-    color-adjust: exact;
+  .section-title {
+    font-size: 14pt !important;
+    margin-bottom: 2mm !important;
+    padding-bottom: 1.5mm !important;
+  }
+  
+  /* Education/Experience in sidebar */
+  .education-item {
+    margin-bottom: 3mm !important;
+  }
+  
+  .school-name, .company-name {
+    font-size: 10pt !important;
+    margin-bottom: 0.5mm !important;
+  }
+  
+  .degree-info, .position-info {
+    font-size: 9pt !important;
+    margin-bottom: 1mm !important;
+  }
+  
+  .work-experience-item {
+    margin-bottom: 3mm !important;
+  }
+  
+  .position-item {
+    margin-bottom: 1.5mm !important;
+    padding-left: 3mm !important;
+  }
+  
+  /* Links section */
+  .link-item {
+    font-size: 7pt !important;
+    margin-bottom: 1mm !important;
+  }
+  
+  /* Skills section */
+  .skills-category-title {
+    font-size: 10pt !important;
+    margin-bottom: 0.5mm !important;
+  }
+  
+  .skill-item {
+    font-size: 8pt !important;
+    margin-bottom: 0.5mm !important;
+    line-height: 1.2 !important;
+  }
+  
+  .skill-item .tech-term {
+    font-size: 7pt !important;
+  }
+  
+  /* Language section */
+  .language-item {
+    font-size: 8pt !important;
+    margin-bottom: 0.5mm !important;
+  }
+  
+  /* Projects section optimization */
+  .project {
+    margin-bottom: 4mm !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  .project-type, .app-badge {
+    font-size: 10pt !important;
+  }
+  
+  .project-link {
+    margin-bottom: 2mm !important;
+  }
+  
+  .project-link a {
+    font-size: 8pt !important;
+  }
+  
+  .project-details {
+    font-size: 8pt !important;
+    line-height: 1.3 !important;
+    margin-bottom: 2mm !important;
+  }
+  
+  .project-image {
+    max-width: 60% !important;
+    margin: 2mm 0 !important;
+  }
+  
+  /* Project experiences optimization */
+  .project-experiences {
+    margin-top: 2mm !important;
+  }
+  
+  .project-experiences .experience-item {
+    margin-bottom: 2.5mm !important;
+    padding-top: 1.5mm !important;
+    border-top: 0.5pt solid #ccc !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  .experience-title {
+    font-size: 9pt !important;
+    margin-bottom: 0.5mm !important;
+  }
+  
+  .experience-company {
+    font-size: 8pt !important;
+    margin-bottom: 1mm !important;
+  }
+  
+  .experience-responsibilities {
+    margin-top: 1mm !important;
+  }
+  
+  .experience-responsibilities li {
+    font-size: 7.5pt !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0.5mm !important;
+    padding-left: 6px !important;
+  }
+  
+  /* Summary section */
+  .summary-text {
+    font-size: 8pt !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Force page breaks where needed */
+  .resume-content {
+    orphans: 2;
+    widows: 2;
+  }
+  
+  /* Avoid breaking certain elements */
+  .experience-header,
+  .project-header,
+  .education-header {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  
+  /* Ensure proper spacing */
+  h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
   }
 }
 

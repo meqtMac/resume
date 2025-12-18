@@ -59,7 +59,7 @@ const formatSectionTitle = (title: string) => {
   const firstChar = title.charAt(0).toUpperCase();
   const nextTwoChars = title.slice(1, 3).toLowerCase();
   const restChars = title.slice(3).toLowerCase();
-  
+
   return (
     <>
       <span style={{ color: '#3E0097' }}>{firstChar}</span>
@@ -107,7 +107,7 @@ const Resume: React.FC = () => {
         {
           title: '懂车帝 iOS客户端开发实习生',
           startDate: '2023-10',
-          endDate: '2023-12月'
+          endDate: '2023-12'
         }
       ]
     }
@@ -133,7 +133,7 @@ const Resume: React.FC = () => {
 
 
   const projects: Project[] = [
-   {
+    {
       title: '智能钢琴谱',
       link: 'https://apps.apple.com/cn/app/%E6%99%BA%E8%83%BD%E9%92%A2%E7%90%B4%E8%B0%B1/id6504392318?l=en-GB',
       linkText: 'App Store上线',
@@ -141,57 +141,37 @@ const Resume: React.FC = () => {
       image: '/assets/smartscore.png',
       experiences: [
         {
+          title: '腾讯视频移动端播放器、投屏业务维护',
+          company: '腾讯视频',
+          date: '2024年7月 - 至今',
+          location: '深圳',
+          responsibilities: [
+            '使用Xcode Instruments排查；通过节流+inspect 系统MPVolueView API调用提高优化音量调节帧率。',
+            'DLNA投屏 & 腾讯视频私有投屏音量调控能力、三方厂商导流私有投屏能力开发。',
+            'iOS，Android、鸿蒙键盘控制播放能力适配。',
+            'KMM生成objc头文件治理，优化无需暴露的类。推动播放器业务引入Swift混编，排查通过NSProxy实现的ObjectiveC对象响应式能力在Swift中无法实现的问题。',
+            '通过AI编码工具；使用Webview开发腾讯内部开关下发平台Debug工具。',
+          ]
+        },
+        {
           title: '在研AIGC前端项目',
           company: '腾讯视频',
           date: '2025年9月 - 至今',
           location: '深圳',
           responsibilities: [
             '首页多tab瀑布流开发；动态卡片渲染、瀑布流布局、数据缓存、SSR能力开发。',
-            '主导使用tailwindcss 移动端页面适配。'
+            '主导使用tailwindcss移动端页面适配，在移动端快速上线业务。',
+            '通过AI使用rust开发protobuf message - ts interface & 自定义协议 map<string, string> 解析器工具，并部署水线；用于前端瀑布流动态下发方案。'
           ]
         },
-        {
-          title: '腾讯视频三段一码（KMM Compose）',
-          company: '腾讯视频',
-          date: '2025年1月 - 2025年7月',
-          location: '深圳',
-          responsibilities: [
-            '优化弹幕开启时的音量调节能力；通过节流+排查系统AP调用提高帧率。',
-            'iOS，Android、鸿蒙键盘能力适配。',
-            'KMM iOS模拟器target 编译问题 fix & KMM生成objc头文件治理，优化编辑速度。'
-          ]
-        },
-        {
-          title: '腾讯视频播放器、投屏业务维护',
-          company: '腾讯视频',
-          date: '2024年7月 - 2024年12月',
-          location: '深圳',
-          responsibilities: [
-            'iOS护眼模式开发。',
-            'DLNA投屏 & 腾讯视频私有投屏 音量调控能力开发。',
-            '联合创维 DLNA投屏导流腾讯视频私有投屏能力开发。',
-            '清晰度优化、观看历史启播优化、横竖视频续保优化增收4w+每天。'
-          ]
-        },
-        {
-          title: '开发提效',
-          company: '腾讯视频',
-          date: '2024年7月 - 至今',
-          location: '深圳',
-          responsibilities: [
-            '推动播放器业务引入Swift混编，排查编译问题，runtime机制的异常；开发提效。',
-            '通过AI编码工具；使用Webview开发TAB（腾讯内部开关下发工具）App内部Debug视图工具。',
-            '开发protobuf message - ts interface & 自定义协议 map<string, string> 解析器 流水线；用于前端瀑布流动态下发方案。'
-          ]
-        },
+
         {
           title: '软件开发实习生 - iOS移动应用',
-          company: '字节跳动-懂车帝',
+          company: '懂车帝',
           date: '2023年10月 - 2023年12月',
           location: '北京',
           responsibilities: [
             'SwiftUI实时活动、灵动岛适配',
-            '学习动态化跨端方案Lynx。'
           ]
         }
       ]
@@ -239,7 +219,7 @@ const Resume: React.FC = () => {
                 <div className="education-location">📍 {education.location}</div>
               </div>
             </div>
-            
+
             {workExperiences.map((work, index) => (
               <div key={index} className="work-experience-item">
                 <div className="work-header">
@@ -305,7 +285,7 @@ const Resume: React.FC = () => {
           <section className="section">
             <h2 className="section-title">{formatSectionTitle("Summary")}</h2>
             <p className="summary-text">
-              移动客户端开发，前端开发；熟练掌握AI编码工具使用（codebuddy-腾讯自研AI IDE-类比cursor）。
+              职业iOS移动客户端开发，业余前端开发；熟练掌握Cursor AI编码工具使用。
             </p>
           </section>
 
@@ -319,13 +299,13 @@ const Resume: React.FC = () => {
                   {project.title && !project.isApp && <span className="project-type">{project.title}</span>}
                   {project.subtitle && <span className="project-title">{project.subtitle}</span>}
                 </div>
-                
+
                 {project.description && (
                   <div className="project-description">
                     {project.description}
                   </div>
                 )}
-                
+
                 {project.link && (
                   <div className="project-link">
                     <span className="link-icon">🔗</span>
@@ -334,29 +314,29 @@ const Resume: React.FC = () => {
                     </a>
                   </div>
                 )}
-                
+
                 {project.showIcon && (
                   <div className="project-app-icon">
                     <SmartScoreIcon size={60} />
                   </div>
                 )}
-                
+
                 {project.image && (
                   <div className="project-image-container">
-                    <img 
-                      src={project.image} 
+                    <img
+                      src={project.image}
                       alt={project.title || project.subtitle}
                       className="project-image"
                     />
                   </div>
                 )}
-                
+
                 {project.details && (
                   <div className="project-details">
                     <p>{project.details}</p>
                   </div>
                 )}
-                
+
                 {project.experiences && project.experiences.length > 0 && (
                   <div className="project-experiences">
                     {project.experiences.map((exp, expIndex) => (
