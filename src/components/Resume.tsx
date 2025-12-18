@@ -85,45 +85,24 @@ const Resume: React.FC = () => {
 
   const workExperiences: WorkExperience[] = [
     {
-      company: '腾讯',
+      company: '腾讯视频',
       location: '深圳',
       positions: [
         {
-          title: '腾讯视频 iOS/KMM 客户端开发',
+          title: '腾讯视频iOS客户端开发',
           startDate: '2024-7',
           endDate: ''
         },
-        {
-          title: '在研AIGC项目前端开发',
-          startDate: '2025-9',
-          endDate: ''
-        }
       ]
     },
-    {
-      company: '字节跳动',
-      location: '北京',
-      positions: [
-        {
-          title: '懂车帝 iOS客户端开发实习生',
-          startDate: '2023-10',
-          endDate: '2023-12'
-        }
-      ]
-    }
   ];
 
   const skills = [
-    'Javascript & TypeScript',
-    'Vue3, React, tailwindcss',
-    'Objective C',
-    'Swift',
-    'Kotlin(KMM)',
-    'Compose',
-    'UIKit',
-    'SwiftUI',
+    'Swift, Objective C, UIKit',
+    'Vue3, React, tailwindcss, vite',
+    'Python',
     'Rust',
-    'Python'
+    'Cursor'
   ];
 
   const languages = [
