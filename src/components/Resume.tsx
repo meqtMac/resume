@@ -81,9 +81,9 @@ const formatSectionTitle = (title: string) => {
 
   return (
     <>
-      <span style={{ color: '#3E0097' }}>{firstChar}</span>
-      <span style={{ color: '#3E0097' }}>{nextTwoChars}</span>
-      <span style={{ color: '#000000' }}>{restChars}</span>
+      <span style={{ color: '#ffffff' }}>{firstChar}</span>
+      <span style={{ color: '#ffffff' }}>{nextTwoChars}</span>
+      <span style={{ color: '#a1a1aa' }}>{restChars}</span>
     </>
   );
 };
@@ -317,9 +317,9 @@ const Resume: React.FC = () => {
                   <div className="degree-info">
                     {currentTranslation.education.degree}{currentTranslation.education.major}
                   </div>
-                  <div className="graduation-date">📅 {currentTranslation.education.graduationDate} {currentTranslation.graduationSuffix}</div>
+                  <div className="graduation-date">{currentTranslation.education.graduationDate} {currentTranslation.graduationSuffix}</div>
                 </div>
-                <div className="education-location">📍 {currentTranslation.education.location}</div>
+                <div className="education-location">{currentTranslation.education.location}</div>
               </div>
             </div>
 
@@ -327,13 +327,13 @@ const Resume: React.FC = () => {
               <div key={index} className="work-experience-item">
                 <div className="work-header">
                   <h3 className="company-name">{work.company}</h3>
-                  <div className="work-location">📍 {work.location}</div>
+                  <div className="work-location">{work.location}</div>
                 </div>
                 {work.positions.map((position, posIndex) => (
                   <div key={posIndex} className="position-item">
                     <div className="position-info">{position.title}</div>
                     <div className="work-date">
-                      📅 {position.startDate}
+                      {position.startDate}
                       {position.endDate && ` - ${position.endDate}`}
                     </div>
                   </div>
@@ -367,12 +367,10 @@ const Resume: React.FC = () => {
             <h2 className="section-title">{formatSectionTitle(currentTranslation.sections.links)}</h2>
             <div className="links">
               <div className="link-item">
-                <span className="link-icon">🔗</span>
                 <span className="link-label">GitHub</span>
                 <a href="#" className="link-value">meqtMac</a>
               </div>
               <div className="link-item">
-                <span className="link-icon">🔗</span>
                 <span className="link-label">Blog</span>
                 <a href="#" className="link-value">meqtmac.github.io</a>
               </div>
@@ -411,7 +409,6 @@ const Resume: React.FC = () => {
 
                 {project.link && (
                   <div className="project-link">
-                    <span className="link-icon">🔗</span>
                     <a href={project.link} target="_blank" rel="noopener noreferrer">
                       {project.linkText}
                     </a>

@@ -19,25 +19,25 @@
 
 .lang-btn {
   padding: 6px 12px;
-  border: 1px solid var(--vivid-purple);
-  background: white;
-  color: var(--vivid-purple);
+  border: 1px solid var(--text-primary);
+  background: transparent;
+  color: var(--text-primary);
   font-size: 8pt;
   font-weight: 500;
-  border-radius: 4px;
+  border-radius: 0;
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .lang-btn:hover {
-  background: var(--vivid-purple);
-  color: white;
+  background: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 .lang-btn.active {
-  background: var(--vivid-purple);
-  color: white;
+  background: var(--text-primary);
+  color: var(--bg-primary);
   font-weight: 600;
 }
 
@@ -47,20 +47,20 @@
   }
 }
 
-/* Modern Dark SaaS Color Definitions - Inspired by Cursor Directory */
+/* Pure Black & White Theme */
 :root {
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #111111;
-  --bg-card: rgba(255, 255, 255, 0.02);
-  --border-primary: rgba(255, 255, 255, 0.06);
-  --border-secondary: rgba(255, 255, 255, 0.03);
+  --bg-primary: #000000;
+  --bg-secondary: #000000;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --border-primary: rgba(255, 255, 255, 0.08);
+  --border-secondary: rgba(255, 255, 255, 0.04);
   --text-primary: #ffffff;
   --text-secondary: #a1a1aa;
   --text-tertiary: #71717a;
-  --accent-primary: #3b82f6;
-  --accent-secondary: #8b5cf6;
-  --accent-success: #10b981;
-  --accent-warning: #f59e0b;
+  --accent-primary: #ffffff;
+  --accent-secondary: #ffffff;
+  --accent-success: #ffffff;
+  --accent-warning: #ffffff;
   
   /* Legacy compatibility */
   --vivid-purple: var(--accent-primary);
@@ -73,15 +73,15 @@
   --section-divider: var(--border-primary);
 }
 
-/* Modern Dark A4 Container - Inspired by Cursor Directory */
+/* Pure Black A4 Container - No Rounded Corners */
 .resume-container {
   width: 210mm;
   min-height: 297mm;
   margin: 0 auto;
   background: var(--bg-secondary);
   border: 1px solid var(--border-primary);
-  border-radius: 8px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
   font-family: 'Inter', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 8.5pt;
   line-height: 1.4;
@@ -91,15 +91,14 @@
   position: relative;
 }
 
-/* Modern Header Styles - Cleaner design */
+/* Modern Header Styles - No Rounded Corners */
 .resume-header {
   text-align: center;
-  padding: 0 0 5mm 0;
+  padding: 4mm;
   border-bottom: 1px solid var(--border-primary);
   margin-bottom: 5mm;
   background: var(--bg-card);
-  border-radius: 6px;
-  padding: 4mm;
+  border-radius: 0;
 }
 
 .name {
@@ -142,7 +141,7 @@
   padding: 6px 12px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-secondary);
-  border-radius: 4px;
+  border-radius: 0;
   transition: all 0.2s ease;
 }
 
@@ -152,7 +151,7 @@
 }
 
 .contact-item .icon {
-  color: var(--accent-primary);
+  color: var(--text-primary);
   font-size: 9pt;
 }
 
@@ -175,20 +174,20 @@
   background: transparent;
 }
 
-/* Modern Section Styles - Cleaner like Cursor Directory */
+/* Section Styles - Sharp Edges Like Cursor Directory */
 .section {
   margin-bottom: 5mm;
   background: var(--bg-card);
   border: 1px solid var(--border-primary);
-  border-radius: 6px;
+  border-radius: 0;
   padding: 4mm 3.5mm;
   backdrop-filter: blur(10px);
   transition: all 0.2s ease;
 }
 
 .section:hover {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .section-title {
@@ -285,7 +284,6 @@
 
 .position-item {
   margin-bottom: 2mm;
-  padding-left: 4mm;
 }
 
 .position-info {
@@ -316,7 +314,7 @@
 }
 
 .link-icon {
-  color: var(--accent-color);
+  color: var(--text-primary);
   font-size: 8pt;
 }
 
@@ -326,7 +324,7 @@
 }
 
 .link-value {
-  color: var(--accent-color);
+  color: var(--text-primary);
   text-decoration: none;
   font-weight: 600;
 }
@@ -368,7 +366,7 @@
   content: '•';
   position: absolute;
   left: 0;
-  color: var(--accent-color);
+  color: var(--text-primary);
 }
 
 /* Mono font for tech terms in skills */
@@ -399,7 +397,7 @@
   content: '•';
   position: absolute;
   left: 0;
-  color: var(--accent-color);
+  color: var(--text-primary);
 }
 
 
@@ -463,11 +461,11 @@
 }
 
 .project-link .link-icon {
-  color: var(--accent-color);
+  color: var(--text-primary);
 }
 
 .project-link a {
-  color: var(--accent-color);
+  color: var(--text-primary);
   text-decoration: none;
   font-weight: 600;
   font-size: 9pt;
@@ -580,7 +578,7 @@
   content: '•';
   position: absolute;
   left: 0;
-  color: var(--accent-color);
+  color: var(--text-primary);
 }
 
 /* Print Styles */
@@ -718,7 +716,6 @@
   
   .position-item {
     margin-bottom: 1.5mm !important;
-    padding-left: 3mm !important;
   }
   
   /* Links section */
@@ -840,17 +837,15 @@
   }
 }
 
-/* Modern Dark Screen preview styles - Enhanced like Cursor Directory */
+/* Pure Black Screen preview styles - Monochrome */
 @media screen {
   body {
     background: var(--bg-primary);
     padding: 20px;
-    background-image: radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-                      radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
   }
   
   .resume-container {
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
   }
   
   /* Ensure sidebar and content backgrounds are transparent in screen view */
@@ -859,9 +854,9 @@
     background: transparent !important;
   }
   
-  /* Add subtle glow effects */
+  /* Add subtle white glow effects */
   .section:hover {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
   }
 }
 
