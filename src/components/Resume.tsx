@@ -124,11 +124,11 @@ const Resume: React.FC = () => {
       },
       workExperiences: [
         {
-          company: '腾讯视频',
+          company: '腾讯',
           location: '深圳',
           positions: [
             {
-              title: '腾讯视频iOS客户端开发',
+              title: 'iOS客户端开发',
               startDate: '2024-7',
               endDate: ''
             },
@@ -136,14 +136,14 @@ const Resume: React.FC = () => {
         },
       ],
       languages: ['TOEFL成绩 101分'],
-      summary: '职业iOS移动客户端开发，业余前端开发；熟练掌握Cursor AI编码工具使用。',
-      graduationSuffix: '毕业',
+      summary: '1.5年iOS开发经验，独立上线个人App。精通Swift/Objective-C、UIKit，熟悉Runtime机制，使用Instruments进行性能调优。具备AIGC项目开发经验，掌握大模型多轮对话、多模态AI应用（文生图/视频/音频）、SSE流式输出。了解HLS/HEVC多媒体技术。拥抱AI开发，熟练使用Cursor等工具提效。',
+     graduationSuffix: '毕业',
       appBadge: '独立上线App',
       projects: [
         {
           title: '个人App 智能钢琴谱',
           link: 'https://apps.apple.com/cn/app/%E6%99%BA%E8%83%BD%E9%92%A2%E7%90%B4%E8%B0%B1/id6504392318?l=en-GB',
-          details: '智能钢琴谱，是一款基于人工智能技术的智能乐谱APP。它能根据你的演奏，自动帮您翻谱。',
+          details: '基于AI技术的智能乐谱APP，通过音频识别自动翻谱。使用Swift开发，集成UIKit/SwiftUI混合架构，Realm本地数据库存储。核心技术：CoreML本地模型部署进行乐谱位置识别，Accelerate框架调用硬件加速的二维傅立叶变换优化音频处理性能。',
           experiences: [
             {
               title: '腾讯视频移动端播放器、投屏业务维护',
@@ -159,7 +159,7 @@ const Resume: React.FC = () => {
               ]
             },
             {
-              title: '在研AIGC前端项目',
+              title: '灵芽AI创作者社区 lumio.qq.com',
               company: '腾讯视频',
               date: '2025年9月 - 至今',
               location: '深圳',
@@ -201,11 +201,11 @@ const Resume: React.FC = () => {
       },
       workExperiences: [
         {
-          company: 'Tencent Video',
+          company: 'Tencent',
           location: 'Shenzhen',
           positions: [
             {
-              title: 'Tencent Video iOS Client Developer',
+              title: 'iOS Client Developer',
               startDate: '2024-7',
               endDate: ''
             },
@@ -213,14 +213,14 @@ const Resume: React.FC = () => {
         },
       ],
       languages: ['TOEFL Score: 101'],
-      summary: 'Professional iOS mobile client developer, amateur frontend developer; proficient in using Cursor AI coding tools.',
+      summary: '1.5 years of iOS development experience with independent App Store launch. Proficient in Swift/Objective-C, UIKit, Runtime mechanisms, and Instruments performance optimization. Experienced in AIGC projects with multi-turn LLM conversations, multimodal AI capabilities (text-to-image/video/audio) and SSE streaming. Familiar with HLS/HEVC multimedia technologies. Embracing AI-assisted development with tools like Cursor for enhanced productivity.',
       graduationSuffix: 'Graduated',
       appBadge: 'Independent App Launch',
       projects: [
         {
           title: 'Personal App Smart Piano Score',
           link: 'https://apps.apple.com/cn/app/%E6%99%BA%E8%83%BD%E9%92%A2%E7%90%B4%E8%B0%B1/id6504392318?l=en-GB',
-          details: 'Smart Piano Score is an intelligent sheet music APP based on artificial intelligence technology. It can automatically turn pages for you according to your performance.',
+          details: 'AI-powered intelligent sheet music APP with automatic page turning based on audio recognition. Developed in Swift with hybrid UIKit/SwiftUI architecture and Realm local database. Core technologies: CoreML local model deployment for score position recognition, Accelerate framework leveraging hardware-accelerated 2D FFT for optimized audio processing performance.',
           experiences: [
             {
               title: 'Tencent Video Mobile Player & Casting Business Maintenance',
@@ -236,7 +236,7 @@ const Resume: React.FC = () => {
               ]
             },
             {
-              title: 'AIGC Frontend Project in Development',
+              title: 'Lingya AI Creator Community lumio.qq.com',
               company: 'Tencent Video',
               date: 'September 2025 - Present',
               location: 'Shenzhen',
