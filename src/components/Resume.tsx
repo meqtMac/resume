@@ -145,7 +145,6 @@ const Resume: React.FC = () => {
           link: 'https://apps.apple.com/cn/app/%E6%99%BA%E8%83%BD%E9%92%A2%E7%90%B4%E8%B0%B1/id6504392318?l=en-GB',
           linkText: 'App Store上线',
           details: '智能钢琴谱，是一款基于人工智能技术的智能乐谱APP。它能根据你的演奏，自动帮您翻谱。',
-          image: '/assets/smartscore.png',
           experiences: [
             {
               title: '腾讯视频移动端播放器、投屏业务维护',
@@ -224,7 +223,6 @@ const Resume: React.FC = () => {
           link: 'https://apps.apple.com/cn/app/%E6%99%BA%E8%83%BD%E9%92%A2%E7%90%B4%E8%B0%B1/id6504392318?l=en-GB',
           linkText: 'Available on App Store',
           details: 'Smart Piano Score is an intelligent sheet music APP based on artificial intelligence technology. It can automatically turn pages for you according to your performance.',
-          image: '/assets/smartscore.png',
           experiences: [
             {
               title: 'Tencent Video Mobile Player & Casting Business Maintenance',

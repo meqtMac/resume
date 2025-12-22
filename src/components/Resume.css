@@ -1,6 +1,8 @@
-/* Resume.css - LaTeX Style Implementation */
+/* Resume.css - Modern Dark SaaS Style Implementation */
 
-/* Import Google Fonts and Chinese fonts */
+/* Import Modern Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap');
@@ -45,128 +47,166 @@
   }
 }
 
-/* Color Definitions - Based on LaTeX MagicalCV */
+/* Modern Dark SaaS Color Definitions - Inspired by Cursor Directory */
 :root {
-  --vivid-purple: #3E0097;
-  --slate-grey: #2E2E2E;
-  --light-grey: #666666;
-  --heading-color: var(--vivid-purple);
-  --accent-color: var(--vivid-purple);
-  --emphasis-color: var(--slate-grey);
-  --body-color: var(--light-grey);
-  --section-divider: var(--light-grey);
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-card: rgba(255, 255, 255, 0.02);
+  --border-primary: rgba(255, 255, 255, 0.06);
+  --border-secondary: rgba(255, 255, 255, 0.03);
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-tertiary: #71717a;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #8b5cf6;
+  --accent-success: #10b981;
+  --accent-warning: #f59e0b;
+  
+  /* Legacy compatibility */
+  --vivid-purple: var(--accent-primary);
+  --slate-grey: var(--text-secondary);
+  --light-grey: var(--text-tertiary);
+  --heading-color: var(--text-primary);
+  --accent-color: var(--accent-primary);
+  --emphasis-color: var(--text-primary);
+  --body-color: var(--text-secondary);
+  --section-divider: var(--border-primary);
 }
 
-/* A4 Paper Dimensions */
+/* Modern Dark A4 Container - Inspired by Cursor Directory */
 .resume-container {
   width: 210mm;
   min-height: 297mm;
   margin: 0 auto;
-  background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  font-family: 'Inter', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 8.5pt;
-  line-height: 1.3;
+  line-height: 1.4;
   color: var(--body-color);
-  padding: 12mm 10mm;
+  padding: 15mm 12mm;
   box-sizing: border-box;
   position: relative;
 }
 
-/* Header Styles */
+/* Modern Header Styles - Cleaner design */
 .resume-header {
   text-align: center;
-  padding: 0 0 4mm 0;
-  border-bottom: none;
-  margin-bottom: 3mm;
+  padding: 0 0 5mm 0;
+  border-bottom: 1px solid var(--border-primary);
+  margin-bottom: 5mm;
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 4mm;
 }
 
 .name {
-  font-family: 'Noto Serif SC', '宋体', SimSun, serif;
-  font-size: 40pt;
+  font-family: 'Inter', 'Noto Serif SC', '宋体', SimSun, serif;
+  font-size: 36pt;
   line-height: 1.1;
-  margin-bottom: 5pt;
-  font-weight: 400;
-  letter-spacing: 8px;
+  margin-bottom: 4pt;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0;
+  color: var(--text-primary);
 }
 
 .first-name {
-  font-weight: 400;
-  color: var(--slate-grey);
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 .last-name {
-  font-weight: 400;
-  color: var(--slate-grey);
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 .contact-info {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 5pt;
-  font-size: 11pt;
-  color: var(--body-color);
+  gap: 24px;
+  margin-top: 6pt;
+  font-size: 10pt;
+  color: var(--text-secondary);
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-secondary);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-primary);
 }
 
 .contact-item .icon {
-  color: var(--accent-color);
+  color: var(--accent-primary);
+  font-size: 9pt;
 }
 
-/* Main Layout */
+/* Main Layout - Optimized spacing */
 .resume-main {
   display: grid;
-  grid-template-columns: 65mm 1fr;
-  gap: 6mm;
-  min-height: calc(297mm - 25mm);
+  grid-template-columns: 68mm 1fr;
+  gap: 5mm;
+  min-height: calc(297mm - 30mm);
 }
 
 /* Sidebar Styles */
 .resume-sidebar {
   padding: 0;
-  background: white;
+  background: transparent;
 }
 
 .resume-content {
   padding: 0;
-  background: white;
+  background: transparent;
 }
 
-/* Section Styles */
+/* Modern Section Styles - Cleaner like Cursor Directory */
 .section {
   margin-bottom: 5mm;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 6px;
+  padding: 4mm 3.5mm;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+}
+
+.section:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .section-title {
-  font-family: 'Lato', sans-serif;
-  font-size: 16pt;
+  font-family: 'Inter', 'Lato', sans-serif;
+  font-size: 13pt;
   font-weight: 600;
   text-transform: none;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.01em;
   margin-bottom: 2.5mm;
   position: relative;
-  padding-bottom: 2mm;
+  padding-bottom: 1.5mm;
+  border-bottom: 1px solid var(--border-secondary);
   display: inline-block;
+  color: var(--text-primary);
 }
 
 .section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 0.9pt;
-  background: var(--section-divider);
+  display: none;
 }
 
 /* Education Styles */
@@ -572,6 +612,46 @@
     background: white !important;
     font-size: 8.5pt !important;
     line-height: 1.3 !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  
+  /* Override dark theme colors for print */
+  .section {
+    background: white !important;
+    border: 1px solid #e0e0e0 !important;
+    color: #000000 !important;
+  }
+  
+  .section-title,
+  .name,
+  .first-name,
+  .last-name,
+  .school-name,
+  .company-name,
+  .experience-title,
+  .project-type,
+  .app-badge,
+  .project-title {
+    color: #000000 !important;
+  }
+  
+  .contact-info,
+  .degree-info,
+  .position-info,
+  .experience-company,
+  .summary-text,
+  .project-description,
+  .project-details,
+  .skill-item,
+  .language-item,
+  .experience-responsibilities li {
+    color: #333333 !important;
+  }
+  
+  .contact-item {
+    background: #f5f5f5 !important;
+    border: 1px solid #e0e0e0 !important;
   }
   
   /* Header optimization */
@@ -597,12 +677,11 @@
     gap: 6mm !important;
   }
   
-  .resume-sidebar {
-    padding: 0 !important;
-  }
-  
+  /* Sidebar and content backgrounds for print */
+  .resume-sidebar,
   .resume-content {
     padding: 0 !important;
+    background: white !important;
   }
   
   /* Section spacing optimization */
@@ -761,15 +840,28 @@
   }
 }
 
-/* Screen preview styles */
+/* Modern Dark Screen preview styles - Enhanced like Cursor Directory */
 @media screen {
   body {
-    background: #e5e5e5;
+    background: var(--bg-primary);
     padding: 20px;
+    background-image: radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                      radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
   }
   
   .resume-container {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Ensure sidebar and content backgrounds are transparent in screen view */
+  .resume-sidebar,
+  .resume-content {
+    background: transparent !important;
+  }
+  
+  /* Add subtle glow effects */
+  .section:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
   }
 }
 
