@@ -136,7 +136,7 @@ const Resume: React.FC = () => {
         },
       ],
       languages: ['TOEFL成绩 101分'],
-      summary: '1.5年iOS开发经验，独立上线个人App。精通Swift/Objective-C、UIKit，熟悉Runtime机制，使用Instruments进行性能调优。具备AIGC项目开发经验，掌握大模型多轮对话、多模态AI应用（文生图/视频/音频）、SSE流式输出。了解HLS/HEVC多媒体技术。拥抱AI开发，熟练使用Cursor等工具提效。',
+      summary: '1.5年iOS开发经验，App Store上线个人App。精通Swift/Objective-C、UIKit，熟悉Runtime机制，使用Instruments进行性能调优。具备AIGC项目开发经验，掌握大模型多轮对话、多模态AI应用（文生图/视频/音频）、SSE流式输出。了解HLS/HEVC多媒体技术。拥抱AI开发，熟练使用Cursor等工具提效。',
      graduationSuffix: '毕业',
       appBadge: '独立上线App',
       projects: [
@@ -146,16 +146,14 @@ const Resume: React.FC = () => {
           details: '基于AI技术的智能乐谱APP，通过音频识别自动翻谱。使用Swift开发，集成UIKit/SwiftUI混合架构，Realm本地数据库存储。核心技术：CoreML本地模型部署进行乐谱位置识别，Accelerate框架调用硬件加速的二维傅立叶变换优化音频处理性能。',
           experiences: [
             {
-              title: '腾讯视频移动端播放器、投屏业务维护',
+              title: '腾讯视频移动端播放器',
               company: '腾讯视频',
               date: '2024年7月 - 至今',
               location: '深圳',
               responsibilities: [
-                '使用Xcode Instruments排查；通过节流+inspect 系统MPVolueView API调用提高优化音量调节帧率。',
-                'DLNA投屏 & 腾讯视频私有投屏音量调控能力、三方厂商导流私有投屏能力开发。',
-                'iOS，Android、鸿蒙键盘控制播放能力适配。',
-                'KMM生成objc头文件治理，优化无需暴露的类。推动播放器业务引入Swift混编，排查通过NSProxy实现的ObjectiveC对象响应式能力在Swift中无法实现的问题。',
-                '通过AI编码工具；使用Webview开发腾讯内部开关下发平台Debug工具。',
+                '性能优化：使用Xcode Instruments进行性能分析，通过节流机制优化MPVolumeView API调用，显著提升音量调节响应帧率。',
+                '投屏技术开发：负责DLNA标准投屏及腾讯视频私有投屏协议的音量控制模块，实现三方厂商导流至私有投屏的技术方案。',
+                '技术架构升级：主导播放器业务Swift混编改造，解决NSProxy响应式架构在Swift环境下的兼容性问题及x86_64模拟器构建适配。',
               ]
             },
             {
@@ -164,9 +162,8 @@ const Resume: React.FC = () => {
               date: '2025年9月 - 至今',
               location: '深圳',
               responsibilities: [
-                '首页多tab瀑布流开发；动态卡片渲染、瀑布流布局、数据缓存、SSR能力开发。',
-                '主导使用tailwindcss移动端页面适配，在移动端快速上线业务。',
-                '通过AI使用rust开发protobuf message - ts interface & 自定义协议 map<string, string> 解析器工具，并部署水线；用于前端瀑布流动态下发方案。'
+                '首页多tab瀑布流开发；动态卡片解析和渲染、瀑布流布局、数据缓存、自动播放能力。',
+                '支持多模态的AIGC生成form业务；支持生图、生视频、生音频、多图prompt、首尾帧prompt。',
               ]
             },
             {
@@ -213,7 +210,7 @@ const Resume: React.FC = () => {
         },
       ],
       languages: ['TOEFL Score: 101'],
-      summary: '1.5 years of iOS development experience with independent App Store launch. Proficient in Swift/Objective-C, UIKit, Runtime mechanisms, and Instruments performance optimization. Experienced in AIGC projects with multi-turn LLM conversations, multimodal AI capabilities (text-to-image/video/audio) and SSE streaming. Familiar with HLS/HEVC multimedia technologies. Embracing AI-assisted development with tools like Cursor for enhanced productivity.',
+      summary: '1.5 years of iOS development experience with App Store launch of personal App. Proficient in Swift/Objective-C, UIKit, Runtime mechanisms, and Instruments performance optimization. Experienced in AIGC projects with multi-turn LLM conversations, multimodal AI capabilities (text-to-image/video/audio) and SSE streaming. Familiar with HLS/HEVC multimedia technologies. Embracing AI-assisted development with tools like Cursor for enhanced productivity.',
       graduationSuffix: 'Graduated',
       appBadge: 'Independent App Launch',
       projects: [
@@ -223,27 +220,24 @@ const Resume: React.FC = () => {
           details: 'AI-powered intelligent sheet music APP with automatic page turning based on audio recognition. Developed in Swift with hybrid UIKit/SwiftUI architecture and Realm local database. Core technologies: CoreML local model deployment for score position recognition, Accelerate framework leveraging hardware-accelerated 2D FFT for optimized audio processing performance.',
           experiences: [
             {
-              title: 'Tencent Video Mobile Player & Casting Business Maintenance',
+              title: 'Tencent Video Mobile Player',
               company: 'Tencent Video',
               date: 'July 2024 - Present',
               location: 'Shenzhen',
               responsibilities: [
-                'Used Xcode Instruments for troubleshooting; improved volume control frame rate through throttling + inspecting system MPVolumeView API calls.',
-                'Developed DLNA casting & Tencent Video private casting volume control capabilities, third-party manufacturer diversion to private casting capabilities.',
-                'iOS, Android, HarmonyOS keyboard control playback capability adaptation.',
-                'KMM-generated objc header file governance, optimizing classes that do not need to be exposed. Promoted Swift mixed compilation in player business, troubleshooting ObjectiveC object reactive capabilities implemented through NSProxy that cannot be implemented in Swift.',
-                'Through AI coding tools; developed Tencent internal switch distribution platform Debug tools using Webview.',
+                'Performance Optimization: Conducted performance analysis using Xcode Instruments, implemented throttling mechanisms to optimize MPVolumeView API calls, significantly improving volume control response frame rate.',
+                'Casting Technology Development: Led DLNA standard casting and Tencent Video proprietary casting protocol volume control modules, implemented technical solutions for third-party manufacturer redirection to proprietary casting.',
+                'Technical Architecture Upgrade: Spearheaded Swift mixed compilation transformation for player business, resolved NSProxy reactive architecture compatibility issues in Swift environment and x86_64 simulator build adaptation.',
               ]
             },
             {
-              title: 'Lingya AI Creator Community lumio.qq.com',
+              title: 'AIGC Creator Community lumio.qq.com',
               company: 'Tencent Video',
               date: 'September 2025 - Present',
               location: 'Shenzhen',
               responsibilities: [
-                'Homepage multi-tab waterfall flow development; dynamic card rendering, waterfall layout, data caching, SSR capability development.',
-                'Led mobile page adaptation using tailwindcss, quickly launching business on mobile.',
-                'Developed protobuf message - ts interface & custom protocol map<string, string> parser tools using AI with rust, and deployed pipeline; used for frontend waterfall dynamic distribution solution.'
+                'Homepage multi-tab waterfall flow development; dynamic card parsing and rendering, waterfall layout, data caching, autoplay capabilities.',
+                'Multimodal AIGC generation form business; supporting text-to-image, text-to-video, text-to-audio, multi-image prompts, and first/last frame prompts.',
               ]
             },
             {
